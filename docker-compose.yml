@@ -1,0 +1,21 @@
+version: '3.4'
+
+volumes:
+  l2_data:
+
+services:
+  l2:
+    image: public.ecr.aws/i6b2w2n6/nitro-node:kinto-mainnet-10.0.0
+    ports:
+      - "9545:8545"
+      - "9546:8546"
+    volumes:
+      - "${PWD}/nodeConfig.json:/config/nodeConfig.json"
+      - l2_data:/home/user/.arbitrum
+    entrypoint:
+      - "/usr/local/bin/nitro"
+      - --conf.file=/config/nodeConfig.json
+      - --execution.forwarding-target=wss://kinto-mainnet.calderachain.xyz/ws
+      - --node.feed.input.url=wss://kinto-mainnet.calderachain.xyz/feed
+      - --parent-chain.connection.url=https://eth.merkle.io
+      - --parent-chain.blob-client.beacon-url= #INSERT ETHEREUM BEACON API URL HERE

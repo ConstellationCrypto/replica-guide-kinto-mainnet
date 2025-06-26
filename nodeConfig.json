@@ -1,0 +1,66 @@
+{
+  "metrics-server": {
+    "port": 6070,
+    "addr": "0.0.0.0"
+  },
+  "chain": {
+    "info-json": "[{\"chain-id\":7887,\"parent-chain-id\":1,\"chain-name\":\"kinto-mainnet\",\"chain-config\":{\"chainId\":7887,\"homesteadBlock\":0,\"daoForkBlock\":null,\"daoForkSupport\":true,\"eip150Block\":0,\"eip150Hash\":\"0x0000000000000000000000000000000000000000000000000000000000000000\",\"eip155Block\":0,\"eip158Block\":0,\"byzantiumBlock\":0,\"constantinopleBlock\":0,\"petersburgBlock\":0,\"istanbulBlock\":0,\"muirGlacierBlock\":0,\"berlinBlock\":0,\"londonBlock\":0,\"clique\":{\"period\":0,\"epoch\":0},\"arbitrum\":{\"EnableArbOS\":true,\"AllowDebugPrecompiles\":false,\"DataAvailabilityCommittee\":false,\"InitialArbOSVersion\":10,\"InitialChainOwner\":\"0x09d34b74cd8b1c4394a3cd9630e1ba027e6ed4f5\",\"GenesisBlockNum\":0}},\"rollup\":{\"bridge\":\"0x859a53Fe2C8DA961387030E7CB498D6D20d0B2DB\",\"inbox\":\"0xBFfaA85c1756472fFC37e6D172A7eC0538C14474\",\"sequencer-inbox\":\"0xF4Ef823D57819AC7202a081A5B49376BD28E7b3a\",\"rollup\":\"0x5073dA9cA4810f3E0aA01c20c7d9d02C3f522e11\",\"validator-utils\":\"0x2b0E04Dc90e3fA58165CB41E2834B44A56E766aF\",\"validator-wallet-creator\":\"0x9CAd81628aB7D8e239F1A5B497313341578c5F71\",\"deployed-at\":18788587}}]",
+    "name": "kinto-mainnet"
+  },
+  "http": {
+    "addr": "0.0.0.0",
+    "port": 8545,
+    "vhosts": "*",
+    "corsdomain": "*",
+    "api": [
+      "eth",
+      "net",
+      "web3",
+      "arb",
+      "debug",
+      "txpool"
+    ]
+  },
+  "ws": {
+    "addr": "0.0.0.0",
+    "port": 8546,
+    "api": [
+      "eth",
+      "net",
+      "web3",
+      "arb",
+      "debug",
+      "txpool"
+    ]
+  },
+  "node": {
+    "feed": {
+      "output": {
+        "enable": false,
+        "port": 9642
+      }
+    },
+    "delayed-sequencer": {
+      "enable": false
+    },
+    "batch-poster": {
+      "enable": false
+    },
+    "staker": {
+      "enable": true
+    },
+    "dangerous": {
+      "no-sequencer-coordinator": true
+    }
+  },
+  "execution": {
+    "sequencer": {
+      "max-tx-data-size": 85000,
+      "enable": false,
+      "max-block-speed": "250ms"
+    },
+    "caching": {
+      "archive": true
+    }
+  }
+}
